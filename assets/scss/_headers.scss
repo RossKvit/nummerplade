@@ -1,0 +1,199 @@
+@import "mixins";
+
+.blog-header{
+  background-color: #0b1f2b;
+  padding-bottom: 100px;
+  &__biglogo{
+    max-width: 532px;
+    width: auto;
+    margin: 0 auto 30px auto;
+  }
+  &__biglogo-img{
+    width: 100%;
+    height: auto;
+  }
+  &__titel{
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+}
+
+/*Info header*/
+
+.info-header{
+  background-color: #0b1f2b;
+  padding: 20px 0 ;
+  display: flex;
+  justify-content: space-between;
+}
+
+.info-header-content-wrap{
+  display: flex;
+  justify-content: space-between;
+  @include respond-to(992px){
+    flex-wrap: wrap;
+  }
+}
+
+/*Birger Navigation////////////////////////////////////////////////////////////*/
+
+.search-and-menubtn-wrap{ /*for infoheader*/
+  position: relative;
+}
+
+.burger-wrap{
+  width: 30px;
+  height: auto;
+  border-radius: 5px;
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 15px;
+  position: relative;
+  z-index: 10;
+  &--disp{
+    display: none;
+    margin: 0;
+    @include respond-to(992px){
+      display: block;
+      position: fixed;
+      right: 20px;
+      top: 20px;
+      padding: 5px;
+      background-color: #0b1f2b;
+    }
+  }
+  &--infoheader{
+    width: 47px;
+    @include respond-to(992px){
+      width: 30px;
+      display: block;
+      position: fixed;
+      z-index: 3;
+      right: 20px;
+      top: 20px;
+      padding: 5px;
+      background-color: #0b1f2b;
+    }
+  }
+  &--header-disp{
+    padding: 5px;
+    background-color: #0b1f2b;
+    display: none;
+    margin: 0;
+    @include respond-to(992px){
+      display: block;
+      position: fixed;
+      z-index: 3;
+      right: 20px;
+      top: 20px;
+    }
+  }
+}
+
+.nav-resp-btn {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 11;
+}
+
+.nav-resp-btn div {
+  display: block;
+  width: 100%;
+  height: 5px;
+  background: #fff;
+  margin: 0 auto 3px auto;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+  border-radius: 5px;
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+
+/*for infoheader*/
+.nav-resp-btn .one-infoheader, .nav-resp-btn .two-infoheader, .nav-resp-btn .three-infoheader {
+  display: block;
+  width: 100%;
+  height: 5px;
+  background: #fff;
+  margin: 0 auto 12px auto;
+  transition: all 0.3s;
+  backface-visibility: hidden;
+  border-radius: 5px;
+  &:last-child{
+    margin-bottom: 0;
+  }
+  @include respond-to(992px){
+    margin: 0 auto 3px auto;
+  }
+}
+.nav-resp-btn.on .one-infoheader {
+  transform: rotate(45deg) translate(12px, 11px);
+  @include respond-to(992px){
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+}
+.nav-resp-btn.on .three-infoheader {
+  transform: rotate(-45deg) translate(13px, -12px);
+  @include respond-to(992px){
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
+/*for infoheader END*/
+
+
+.nav-resp-btn.on .one {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.nav-resp-btn.on .two {
+  opacity: 0;
+}
+
+.nav-resp-btn.on .three {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.burger-menu{
+  color: #fff;
+  position: fixed;
+  transform: translateY(0) translateX(436px);
+  top: 0;
+  bottom: 0;
+  z-index: 3;
+  max-width: 436px;
+  width: 80%;
+  right: -20px;
+  background-color: #0b1f2b;
+  transition: .5s;
+  ul{ 
+    list-style: none;
+    margin-top: 110px;
+    font-size: 16px;
+    li{
+      margin: 0 0 30px 30px;
+      a{
+        color: #fff;
+        text-decoration: none;
+        &:hover{
+          color: #E54300;
+        }
+      }
+    }
+  }
+}
+
+.show{
+  transform: translateY(0);
+}
+
+/*Birger Navigation////////////////////////////////////////////////////////////END*/
+
+
+
+
